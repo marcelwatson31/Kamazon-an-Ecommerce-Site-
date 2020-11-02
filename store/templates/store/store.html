@@ -55,74 +55,7 @@
 			</div>
 		</div>
 
-		<div class="col-lg-4">
-			<img class="thumbnail" src="{% static 'store/images/plant-640.jpg' %}">
-			<div class="box-element product">
-				<h6><strong>Amazonian Seeds</strong></h6>
-				<hr>
-				
-				<button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
-				<a class="btn btn-outline-success" href="#">View</a>
-				<h4 style="display: inline-block; float: right"><strong>$20</strong></h4>
-				
-			</div>
-		</div>
-
-		<div class="col-lg-4">
-			<img class="thumbnail" src="{% static 'store/images/statue-640.jpg' %}">
-			<div class="box-element product">
-				<h6><strong>Statue</strong></h6>
-				<hr>
-
-				<button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
-				<a class="btn btn-outline-success" href="#">View</a>
-				<h4 style="display: inline-block; float: right"><strong>$20</strong></h4>
-
-			</div>
-		</div>
-	</div>
-    <div class="row">
-		<div class="col-lg-4">
-			<img class="thumbnail" src="{% static 'store/images/seeds-640.jpeg' %}">
-			<div class="box-element product">
-				<h6><strong>Product</strong></h6>
-				<hr>
-
-				<button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
-				<a class="btn btn-outline-success" href="#">View</a>
-				<h4 style="display: inline-block; float: right"><strong>$20</strong></h4>
-
-			</div>
-		</div>
-
-		<div class="col-lg-4">
-			<img class="thumbnail" src="{% static 'store/images/plant-640.jpg' %}">
-			<div class="box-element product">
-				<h6><strong>Amazonian Seeds</strong></h6>
-				<hr>
-				
-				<button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
-				<a class="btn btn-outline-success" href="#">View</a>
-				<h4 style="display: inline-block; float: right"><strong>$20</strong></h4>
-				
-			</div>
-		</div>
-
-		<div class="col-lg-4">
-			<img class="thumbnail" src="{% static 'store/images/statue-640.jpg' %}">
-			<div class="box-element product">
-				<h6><strong>Statue</strong></h6>
-				<hr>
-
-				<button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
-				<a class="btn btn-outline-success" href="#">View</a>
-				<h4 style="display: inline-block; float: right"><strong>$20</strong></h4>
-
-			</div>
-		</div>
-	</div>
-
-	<div class="row">
+		
 		{% for product in products %}
 		<div class="col-lg-4">
 			<img class="thumbnail" src="{{product.imageURL}}">
@@ -130,7 +63,7 @@
 				<h6><strong>{{product.name}}</strong></h6>
 				<hr>
 
-				<button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
+				<button data-product={{product.id}} data-action="add"  class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
 				<a class="btn btn-outline-success" href="#">View</a>
 				<h4 style="display: inline-block; float: right"><strong>${{product.price|floatformat:2}}</strong></h4>
 
