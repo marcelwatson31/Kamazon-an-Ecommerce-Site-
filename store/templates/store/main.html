@@ -9,7 +9,8 @@
     <link rel="stylesheet" type = "text/css" href="{% static 'store/css/main.css' %}">
   <script type ="text/javascript">
   var user = '{{request.user}}'
-  function getToken(name) {
+
+		function getToken(name) {
 		    var cookieValue = null;
 		    if (document.cookie && document.cookie !== '') {
 		        var cookies = document.cookie.split(';');
@@ -89,6 +90,6 @@
 
     {% endblock content %}
    
-    <script src="{% static 'store/css/cart.js' %}"></script>
+    <script src="{% static "store/css/cart.js" %}"></script>
 </body>
 </html>
