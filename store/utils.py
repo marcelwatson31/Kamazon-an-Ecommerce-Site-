@@ -39,7 +39,7 @@ def cookieCart(request):
 			pass
 			
 	return {'cartItems':cartItems ,'order':order, 'items':items}
-	
+
 def cartData(request):
 	if request.user.is_authenticated:
 		customer = request.user.customer
@@ -81,3 +81,11 @@ def guestOrder(request, data):
 			quantity=item['quantity'],
 		)
 	return customer, order
+
+def userSearch(request):
+	search = str('')
+	products = Product.objects.all()
+
+	if search in Product.objects.all():
+		return Product.name, Product.image, Product.price
+	

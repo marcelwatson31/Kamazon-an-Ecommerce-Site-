@@ -7,8 +7,9 @@ from .utils import cookieCart, cartData, guestOrder
 
 # Create your views here.
 def main(request):
-    context = {}
-    return render(request, 'store/main.html', context)
+	search_term = ''
+	context = {search_term}
+	return render(request, 'store/main.html', context, search_term)
 
 def store(request):
 	data = cartData(request)
@@ -41,6 +42,15 @@ def checkout(request):
 
 	context = {'items':items, 'order':order, 'cartItems':cartItems}
 	return render(request, 'store/checkout.html', context)
+
+def Products(request):
+    products = Product.objects.all().filter(feeder__icontains=search_term)
+	
+    if 'search' in request.GET:
+        search_term = request.GET['search']
+        products = Product.objects.all().filter(feeder__icontains=search_term)
+		
+    return render(request, 'store/Products.html', {'products' : products, 'search_term': search_term })
 
 def updateItem(request):
 	data = json.loads(request.body)

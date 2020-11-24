@@ -86,5 +86,12 @@ class ShippingAddress(models.Model):
         return self.address
 
 
+'''class CustomerSearch(models.Model):
+    userSearch = models.CharField(blank=True, on_delete=models.SET_NULL)
+    if UserSear
+
+    def __str__(self):
+        return self.userSearch'''
+
 
     

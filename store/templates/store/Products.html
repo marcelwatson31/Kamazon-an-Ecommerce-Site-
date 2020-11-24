@@ -1,0 +1,23 @@
+{% extends 'store/main.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block content %}
+    <title>Products</title>
+</head>
+<body>
+{% block content %}
+    {% for product in all_search_results %}
+        <h3>{{product.name}}</h3>
+        <p>{{product.price}}</p>
+        <img src="{{ product.imageURL}}">
+    {% empty %}
+        <h2>No results found</h2>
+    {% endfor %}
+</body>
+{% endblock content %}
+</html>
